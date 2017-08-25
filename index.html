@@ -142,7 +142,7 @@ $(document).ready(function () {
 </style>
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("knn0.1");
+  window.initializeSourceEmbed("knn0.1.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
@@ -171,25 +171,58 @@ $(document).ready(function () {
 </div>
 
 
+<!-- rnb-text-begin -->
 <p>This is an <a href="http://rmarkdown.rstudio.com">R Markdown</a> Notebook. When you execute code within the notebook, the results appear beneath the code.</p>
 <p>Try executing this chunk by clicking the <em>Run</em> button within the chunk or by placing your cursor inside it and pressing <em>Ctrl+Shift+Enter</em>.</p>
-<pre class="{r}"><code>## đọc file CSV
-lua &lt;- read.csv(&quot;/home/teatran/Downloads/bt1/BPH.csv&quot;)
-
-## chuyển kiểu cho cột Rice.species
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyMgxJHhu41jIGZpbGUgQ1NWXG5sdWEgPC0gcmVhZC5jc3YoXCIvaG9tZS90ZWF0cmFuL0Rvd25sb2Fkcy9idDEvQlBILmNzdlwiLCBzZXAgPSBcIjtcIilcbnN0cihsdWEpXG5gYGAifQ== -->
+<pre class="r"><code>## đọc file CSV
+lua &lt;- read.csv(&quot;/home/teatran/Downloads/bt1/BPH.csv&quot;, sep = &quot;;&quot;)
+str(lua)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiJ2RhdGEuZnJhbWUnOlx0ODQwIG9icy4gb2YgIDEyIHZhcmlhYmxlczpcbiAkIExPTiAgICAgICAgICAgIDogaW50ICA1NTYyNDMgNTU1NzA4IDU1NjM2MCA1NTYxMzUgNTU1OTAwIDU1NTk4OSA1NTY1MDcgNTU2NTg3IDU1NjYzNiA1NTY0NDQgLi4uXG4gJCBMQVQgICAgICAgICAgICA6IGludCAgMTEyNjA3NyAxMTI2MDcyIDExMjU5NjQgMTEyNTc4OSAxMTI1NjcxIDExMjU0MzUgMTEyNTY1NSAxMTI1NDk3IDExMjUzOTYgMTEyNTE5OCAuLi5cbiAkIFJpY2Uuc3BlY2llcyAgIDogRmFjdG9yIHcvIDY4IGxldmVscyBcIjE0OTBcIixcIjIyMzNcIiwuLjogMjQgMjQgMzkgMzUgNjAgNjUgNjUgMjQgMjQgMjQgLi4uXG4gJCBTZWVkaW5nLmRlbnNpdHk6IGludCAgMTUgMjEgMjEgMTUgMjEgMTggMTkgMTggMjAgMTkgLi4uXG4gJCBUZW1wLkMuICAgICAgICA6IGludCAgMjQgMjUgMjYgMjUgMjkgMjggMjUgMjYgMjcgMjcgLi4uXG4gJCBIdW1pZGl0eS4uLiAgICA6IGludCAgOTAgOTAgOTAgOTAgNzUgODIgOTAgODIgODIgODIgLi4uXG4gJCBXYXRlci5sZXZlbCAgICA6IGludCAgNiAwIDcgMCAwIDYgMyAwIDcgMCAuLi5cbiAkIExlYWYuY29sb3IgICAgIDogaW50ICA0IDUgNSA0IDUgNSA1IDQgNSA0IC4uLlxuICQgR3Jhc3MuZGVuc2l0eSAgOiBpbnQgIDI0IDAgMCAwIDQ4IDAgMCAwIDAgMCAuLi5cbiAkIE5iLmJ1ZHMgICAgICAgIDogaW50ICA5NjIgMTA1OCAxMDQ2IDEwNzAgMTA1MCA5NjYgOTgyIDk5MiA5ODEgOTcyIC4uLlxuICQgTmIubGVhdmVzICAgICAgOiBpbnQgIDQzMjkgNDc2OCA0NzA3IDQ4MTUgNDcyNSA0MzQ3IDQ0MTkgNDQ2NCA0NDE0IDQzNzQgLi4uXG4gJCBOYi5CUEggICAgICAgICA6IGludCAgMCAwIDAgMCAwIDAgMCAwIDAgMCAuLi5cbiJ9 -->
+<pre><code>'data.frame':   840 obs. of  12 variables:
+ $ LON            : int  556243 555708 556360 556135 555900 555989 556507 556587 556636 556444 ...
+ $ LAT            : int  1126077 1126072 1125964 1125789 1125671 1125435 1125655 1125497 1125396 1125198 ...
+ $ Rice.species   : Factor w/ 68 levels &quot;1490&quot;,&quot;2233&quot;,..: 24 24 39 35 60 65 65 24 24 24 ...
+ $ Seeding.density: int  15 21 21 15 21 18 19 18 20 19 ...
+ $ Temp.C.        : int  24 25 26 25 29 28 25 26 27 27 ...
+ $ Humidity...    : int  90 90 90 90 75 82 90 82 82 82 ...
+ $ Water.level    : int  6 0 7 0 0 6 3 0 7 0 ...
+ $ Leaf.color     : int  4 5 5 4 5 5 5 4 5 4 ...
+ $ Grass.density  : int  24 0 0 0 48 0 0 0 0 0 ...
+ $ Nb.buds        : int  962 1058 1046 1070 1050 966 982 992 981 972 ...
+ $ Nb.leaves      : int  4329 4768 4707 4815 4725 4347 4419 4464 4414 4374 ...
+ $ Nb.BPH         : int  0 0 0 0 0 0 0 0 0 0 ...</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyMgY2h1eeG7g24ga2nhu4N1IGNobyBj4buZdCBSaWNlLnNwZWNpZXNcbmx1YSRSaWNlLnNwZWNpZXMgPC0gYXMuaW50ZWdlcihsdWEkUmljZS5zcGVjaWVzKVxuIyMgc+G7kSBkw7JuZ1xubnVtUm93IDwtIG5yb3cobHVhKVxuIyMgc+G7kSBj4buZdFxubnVtQ29sIDwtIG5jb2wobHVhKVxuYGBgIn0= -->
+<pre class="r"><code>## chuyển kiểu cho cột Rice.species
 lua$Rice.species &lt;- as.integer(lua$Rice.species)
-
 ## số dòng
 numRow &lt;- nrow(lua)
-
 ## số cột
-numCol &lt;- ncol(lua)
+numCol &lt;- ncol(lua)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnVtUm93XG5gYGAifQ== -->
+<pre class="r"><code>numRow</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDg0MFxuIn0= -->
+<pre><code>[1] 840</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnVtQ29sXG5gYGAifQ== -->
+<pre class="r"><code>numCol</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEyXG4ifQ== -->
+<pre><code>[1] 12</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
 
-str(lua)</code></pre>
-<p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Ctrl+Alt+I</em>.</p>
-<p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Ctrl+Shift+K</em> to preview the HTML file).</p>
-
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKVGhpcyBpcyBhbiBbUiBNYXJrZG93bl0oaHR0cDovL3JtYXJrZG93bi5yc3R1ZGlvLmNvbSkgTm90ZWJvb2suIFdoZW4geW91IGV4ZWN1dGUgY29kZSB3aXRoaW4gdGhlIG5vdGVib29rLCB0aGUgcmVzdWx0cyBhcHBlYXIgYmVuZWF0aCB0aGUgY29kZS4gCgpUcnkgZXhlY3V0aW5nIHRoaXMgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpSdW4qIGJ1dHRvbiB3aXRoaW4gdGhlIGNodW5rIG9yIGJ5IHBsYWNpbmcgeW91ciBjdXJzb3IgaW5zaWRlIGl0IGFuZCBwcmVzc2luZyAqQ3RybCtTaGlmdCtFbnRlciouIAoKYGBge3J9CiMjIMSR4buNYyBmaWxlIENTVgpsdWEgPC0gcmVhZC5jc3YoIi9ob21lL3RlYXRyYW4vRG93bmxvYWRzL2J0MS9CUEguY3N2IikKCiMjIGNodXnhu4NuIGtp4buDdSBjaG8gY+G7mXQgUmljZS5zcGVjaWVzCmx1YSRSaWNlLnNwZWNpZXMgPC0gYXMuaW50ZWdlcihsdWEkUmljZS5zcGVjaWVzKQoKIyMgc+G7kSBkw7JuZwpudW1Sb3cgPC0gbnJvdyhsdWEpCgojIyBz4buRIGPhu5l0Cm51bUNvbCA8LSBuY29sKGx1YSkKCnN0cihsdWEpCmBgYAoKQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkN0cmwrQWx0K0kqLgoKV2hlbiB5b3Ugc2F2ZSB0aGUgbm90ZWJvb2ssIGFuIEhUTUwgZmlsZSBjb250YWluaW5nIHRoZSBjb2RlIGFuZCBvdXRwdXQgd2lsbCBiZSBzYXZlZCBhbG9uZ3NpZGUgaXQgKGNsaWNrIHRoZSAqUHJldmlldyogYnV0dG9uIG9yIHByZXNzICpDdHJsK1NoaWZ0K0sqIHRvIHByZXZpZXcgdGhlIEhUTUwgZmlsZSkuCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKVGhpcyBpcyBhbiBbUiBNYXJrZG93bl0oaHR0cDovL3JtYXJrZG93bi5yc3R1ZGlvLmNvbSkgTm90ZWJvb2suIFdoZW4geW91IGV4ZWN1dGUgY29kZSB3aXRoaW4gdGhlIG5vdGVib29rLCB0aGUgcmVzdWx0cyBhcHBlYXIgYmVuZWF0aCB0aGUgY29kZS4gCgpUcnkgZXhlY3V0aW5nIHRoaXMgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpSdW4qIGJ1dHRvbiB3aXRoaW4gdGhlIGNodW5rIG9yIGJ5IHBsYWNpbmcgeW91ciBjdXJzb3IgaW5zaWRlIGl0IGFuZCBwcmVzc2luZyAqQ3RybCtTaGlmdCtFbnRlciouIAoKYGBge3J9CiMjIMSR4buNYyBmaWxlIENTVgpsdWEgPC0gcmVhZC5jc3YoIi9ob21lL3RlYXRyYW4vRG93bmxvYWRzL2J0MS9CUEguY3N2Iiwgc2VwID0gIjsiKQpzdHIobHVhKQoKIyMgY2h1eeG7g24ga2nhu4N1IGNobyBj4buZdCBSaWNlLnNwZWNpZXMKbHVhJFJpY2Uuc3BlY2llcyA8LSBhcy5pbnRlZ2VyKGx1YSRSaWNlLnNwZWNpZXMpCgojIyBz4buRIGTDsm5nCm51bVJvdyA8LSBucm93KGx1YSkKCiMjIHPhu5EgY+G7mXQKbnVtQ29sIDwtIG5jb2wobHVhKQoKCmBgYApgYGB7cn0KbnVtUm93Cm51bUNvbApgYGAKCgo=</div>
 
 
 
